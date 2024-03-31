@@ -125,8 +125,10 @@ class _MyHomePageState extends State<MyHomePage> {
             'description': 'lorem ipsum set',
             'image': 'https://i.pravatar.cc',
             'category': 'electronic',
-          },headers:{
-                'Accept':'applaction\json',
+          }, headers: {
+            'Accept': 'applaction/json',
+            'Content-Type': 'multipart/form-data',
+            // 'Authorization': 'Bearer' //after bearer add token
           });
           print(response.body);
         },
