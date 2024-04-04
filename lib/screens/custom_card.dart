@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/models/product_model.dart';
 
 class CustomCard extends StatelessWidget {
-  const CustomCard({super.key});
+  CustomCard({
+    required this.product,
+    Key? key,
+  }) : super(key: key);
+  ProductModel product;
 
   @override
   Widget build(BuildContext context) {
@@ -9,8 +14,8 @@ class CustomCard extends StatelessWidget {
       clipBehavior: Clip.none,
       children: [
         Container(
-          width: 230,
-          height: 130,
+          // width: 200,
+          // height: 130,
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
@@ -58,9 +63,15 @@ class CustomCard extends StatelessWidget {
           ),
         ),
         Positioned(
-            right: 0,
-            bottom: 110,
-            child: Image.asset("assets/image/commer5.jpeg")),
+          right: 30,
+          bottom: 110,
+          child: Image.network(
+            product.image,
+            height: 100,
+            width: 100,
+          ),
+        ),
+
       ],
     );
   }

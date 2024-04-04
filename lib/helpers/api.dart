@@ -5,8 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class Api {
-  Future<dynamic> get({required String uri}) async {
-    http.Response response = await http.get(Uri.parse(uri));
+  Future<dynamic> get({required String uri, @required String? token}) async {
+    Map<String, String> header = {};
+    if (token != null) {
+      header.addAll({'Authorization': 'Bearer $token'});
+    }
+    http.Response response = await http.get(Uri.parse(uri), headers: header);
 
     if (response.statusCode == 200) {
       return jsonDecode(response.body);
