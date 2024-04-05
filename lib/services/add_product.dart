@@ -15,7 +15,7 @@ class AddProduct {
       'description': 'lorem ipsum set',
       'image': 'https://i.pravatar.cc',
       'category': 'electronic',
-    });
+    }, token: '');
     return ProductModel.fromJson(data);
   }
 }

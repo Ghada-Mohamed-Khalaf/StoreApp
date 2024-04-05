@@ -1,14 +1,14 @@
 class ProductModel {
   final int id;
   final String title;
-  final double price;
+  final num price;
   final String description;
   final String image;
   final RatingModle rating; //any map using model******
 
   ProductModel({
-    //build constrctor
-    required this.id, //must required --->null safity
+    //build constructor
+    required this.id, //must required --->null safety
     required this.title,
     required this.price,
     required this.description,
@@ -28,7 +28,7 @@ class ProductModel {
 }
 
 class RatingModle {
-  final double rate;
+  final num rate;
   final int count;
   RatingModle({required this.rate, required this.count});
 

@@ -8,14 +8,16 @@ class UpdateProduct {
       required String description,
       required String image,
       required String category}) async {
-    Map<String, dynamic> data =
-        await Api().post(uri: 'https://fakestoreapi.com/products', body: {
-      "title": 'test product',
-      'price': '13.5',
-      'description': 'lorem ipsum set',
-      'image': 'https://i.pravatar.cc',
-      'category': 'electronic',
-    });
+    Map<String, dynamic> data = await Api().post(
+        uri: 'https://fakestoreapi.com/products',
+        body: {
+          "title": 'test product',
+          'price': '13.5',
+          'description': 'lorem ipsum set',
+          'image': 'https://i.pravatar.cc',
+          'category': 'electronic',
+        },
+        token: '');
     return ProductModel.fromJson(data);
   }
 }
