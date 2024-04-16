@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:store_app/models/product_model.dart';
-import 'package:store_app/screens/custom_card.dart';
+import 'package:store_app/widget/custom_card.dart';
 import 'package:store_app/services/get_all_product_services.dart';
 
 class HomePage extends StatelessWidget {
@@ -23,7 +24,7 @@ class HomePage extends StatelessWidget {
         ],
         backgroundColor: Colors.white,
         elevation: 0,
-        title: Text(
+        title: const Text(
           "New Trend",
           style: TextStyle(color: Colors.black),
         ),
@@ -37,13 +38,13 @@ class HomePage extends StatelessWidget {
               List<ProductModel> products = snapshot.data!;
               return GridView.builder(
                   itemCount: products.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2),
                   itemBuilder: (context, index) {
                     return CustomCard(product: products[index]);
                   });
             } else {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             }

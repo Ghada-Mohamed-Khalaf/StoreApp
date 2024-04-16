@@ -4,6 +4,7 @@ class ProductModel {
   final num price;
   final String description;
   final String image;
+  final String category;
   final RatingModle rating; //any map using model******
 
   ProductModel({
@@ -13,6 +14,7 @@ class ProductModel {
     required this.price,
     required this.description,
     required this.image,
+    required this.category,
     required this.rating,
   });
 
@@ -21,6 +23,7 @@ class ProductModel {
         id: jsonData["id"],
         title: jsonData["title"],
         price: jsonData["price"],
+        category: jsonData['category'],
         description: jsonData["description"],
         image: jsonData["image"],
         rating: RatingModle.fromJason(jsonData['rating']));

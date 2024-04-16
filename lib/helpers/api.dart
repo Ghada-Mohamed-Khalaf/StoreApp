@@ -20,10 +20,9 @@ class Api {
     }
   }
 
-  Future<dynamic> post(
-      {required String uri,
-      @required dynamic body,
-      @required String? token}) async {
+  Future<dynamic> post({required String uri,
+    @required dynamic body,
+    @required String? token}) async {
     Map<String, String> header = {};
     if (token != null) {
       header.addAll({'Authorization': 'Bearer $token'});
@@ -38,7 +37,8 @@ class Api {
         return data;
       } else {
         throw Exception(
-            "there is  a problem with status code ${response.statusCode} with body ${jsonDecode(response.body)}");
+            "there is  a problem with status code ${response
+                .statusCode} with body ${jsonDecode(response.body)}");
       }
 
 //     "title": 'test product',
@@ -47,35 +47,35 @@ class Api {
 //     'image': 'https://i.pravatar.cc',
 //     'category': 'electronic',
 //   }, headers: {
-//     'Accept': 'applaction/json',
+//     'Accept': 'application/json',
 //     'Content-Type': 'multipart/form-data',
 //   });
 // }
 // 'Authorization': 'Bearer' //after bearer add token
     }
   }
-}
 
-Future<dynamic> put(
-    {required String uri,
+
+  Future<dynamic> put({required String uri,
     @required dynamic body,
     @required String? token}) async {
-  Map<String, String> header = {};
-  if (token != null) {
-    header.addAll({'Content-Type': 'application/x-www-form-urlencoded'});
+    Map<String, String> header = {};
+    if (token != null) {
+      header.addAll({'Content-Type': 'application/x-www-form-urlencoded'});
 
-    http.Response response = await http.post(
-      Uri.parse(uri),
-      body: body,
-      headers: header,
-    );
-    if (response.statusCode == 200) {
-      Map<String, dynamic> data = jsonDecode(response.body);
-      return data;
-    } else {
-      throw Exception(
-          "there is  a problem with status code ${response.statusCode} with body ${jsonDecode(response.body)}");
-    }
+      http.Response response = await http.post(
+        Uri.parse(uri),
+        body: body,
+        headers: header,
+      );
+      if (response.statusCode == 200) {
+        Map<String, dynamic> data = jsonDecode(response.body);
+        return data;
+      } else {
+        throw Exception(
+            "there is  a problem with status code ${response
+                .statusCode} with body ${jsonDecode(response.body)}");
+      }
 
 //     "title": 'test product',
 //     'price': '13.5',
@@ -83,10 +83,11 @@ Future<dynamic> put(
 //     'image': 'https://i.pravatar.cc',
 //     'category': 'electronic',
 //   }, headers: {
-//     'Accept': 'applaction/json',
+//     'Accept': 'application/json',
 //     'Content-Type': 'multipart/form-data',
 //   });
 // }
 // 'Authorization': 'Bearer' //after bearer add token
+    }
   }
 }
