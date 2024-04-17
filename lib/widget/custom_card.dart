@@ -34,6 +34,9 @@ class CustomCard extends StatelessWidget {
               ],
             ),
             child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
               elevation: 10,
               child: Padding(
                 padding: const EdgeInsets.symmetric(
@@ -45,7 +48,7 @@ class CustomCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      "handbag lv",
+                      product.title.substring(0, 6),
                       style: TextStyle(color: Colors.grey, fontSize: 16),
                     ),
                     SizedBox(
@@ -61,7 +64,7 @@ class CustomCard extends StatelessWidget {
                         Icon(
                           Icons.favorite,
                           color: Colors.red,
-                        )
+                        ),
                       ],
                     ),
                   ],

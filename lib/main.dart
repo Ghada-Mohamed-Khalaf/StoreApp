@@ -15,7 +15,11 @@ class StoreApp extends StatelessWidget {
         HomePage.id: (context) => const HomePage(),
         UpdateProductPage.id:(context)=>UpdateProductPage(),
       },
+      theme: ThemeData(
+        useMaterial3: false,
+      ),
       initialRoute: HomePage.id,
     );
+
   }
 }
